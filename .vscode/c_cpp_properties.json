@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Program Files (x86)/Microchip/avr/avr8-gnu-toolchain-win32_x86/avr/include/*",
+                "C:/Program Files (x86)/Microchip/avr/avr8-gnu-toolchain-win32_x86/avr/include/avr/*"
+            ],
+            "defines": ["__AVR_ATmega328P__"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "C:/Program Files (x86)/Microchip/avr/avr8-gnu-toolchain-win32_x86/avr/include/*",
+                    "C:/Program Files (x86)/Microchip/avr/avr8-gnu-toolchain-win32_x86/avr/include/avr/*"
+                ],
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "cStandard": "c89",
+            "cppStandard": "c++17",
+            "compilerPath": "C:\\ProgramData\\chocolatey\\bin\\gcc.exe"
+        }
+    ],
+    "version": 4
+}
