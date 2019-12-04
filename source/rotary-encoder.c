@@ -28,7 +28,7 @@
 /* Private functions ---------------------------------------------------------*/
 
 void
-ROTARY_ENCODER_Init(rotartEncoder_st* self, pin_et pin_a, pin_et pin_b)
+ROTARY_ENCODER_Init(rotaryEncoder_st* self, pin_et pin_a, pin_et pin_b)
 {
   self->pin_a = pin_a;
   self->pin_b = pin_b;
@@ -38,7 +38,7 @@ ROTARY_ENCODER_Init(rotartEncoder_st* self, pin_et pin_a, pin_et pin_b)
 }
 
 void
-ROTARY_ENCODER_Update(rotartEncoder_st* self){
+ROTARY_ENCODER_Update(rotaryEncoder_st* self){
     uint8_t sum;
     
     self->state = GPIO_PinRead(self->pin_a) | (GPIO_PinRead(self->pin_b) << 1);
