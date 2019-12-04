@@ -33,12 +33,11 @@ int
 main(void)
 { 
   int32_t encoder_lastCount = 0;
+
   MCU_Init();
   ROTARY_ENCODER_Init(&encoder, P_C0, P_C1);
-  
   MCU_INTERRUPT_ENABLE();
-  
-  USART_Printf("Rotary Encoder Example\n\r", 0);
+  USART_Printf("Rotary Encoder Example\n\r");
   while(1)
   {
     if (encoder_lastCount != encoder.count)
