@@ -20,22 +20,31 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "mcu.h"
+#include "rotary-encoder.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+rotartEncoder_st encoder;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
 int
 main(void)
-{
+{ 
+  int32_t encoder_lastCount = 0;
   MCU_Init();
+  ROTARY_ENCODER_Init(&encoder, P_C0, P_C1);
   
   MCU_INTERRUPT_ENABLE();
   
+  USART_Printf("Rotary Encoder Example\n\r", 0);
   while(1)
   {
-   
+    if (encoder_lastCount != encoder.count)
+    {
+      USART_Printf("Encoder count %d \n\r", encoder.count);
+      encoder_lastCount = encoder.count;
+    }
   }
 }

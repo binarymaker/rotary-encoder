@@ -20,10 +20,12 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "mcu.h"
+#include "rotary-encoder.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+extern rotartEncoder_st encoder;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -31,4 +33,9 @@ ISR(TIMER0_OVF_vect)
 {  
   SYSTIMER_Engin();
   BIT_Clear(TIFR0, TOV0);
+}
+
+ISR(PCINT1_vect)
+{
+  ROTARY_ENCODER_Update(&encoder);
 }

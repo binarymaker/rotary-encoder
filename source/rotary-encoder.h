@@ -33,11 +33,25 @@
 #define __ROTARY_ENCODER_VERSION      (0x0001u)
 
 /* Includes ------------------------------------------------------------------*/
+#include "mcu.h"
 /* Exported types ------------------------------------------------------------*/
+typedef struct
+{
+  pin_et pin_a;
+  pin_et pin_b;
+  volatile uint8_t state;
+  volatile uint8_t lastState;
+  volatile int32_t count;
+}rotartEncoder_st;
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
+void
+ROTARY_ENCODER_Init(rotartEncoder_st* self, pin_et pin_a, pin_et pin_b);
+
+void
+ROTARY_ENCODER_Update(rotartEncoder_st* self);
 
 #ifdef __cplusplus
 }
