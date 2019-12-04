@@ -28,12 +28,12 @@
 #define F_CPU                                                        (8000000UL)
 
 #define MCU_GPIO_DRIVER                                                  ENABLE 
-#define MCU_EXTERNAL_INTERRUPT_DRIVER                                    DISABLE
+#define MCU_EXTERNAL_INTERRUPT_DRIVER                                    ENABLE
 #define MCU_ADC_DRIVER                                                   DISABLE
-#define MCU_USART_DRIVER                                                 DISABLE
+#define MCU_USART_DRIVER                                                 ENABLE
 #define MCU_I2C_DRIVER                                                   DISABLE
 #define MCU_SPI_DRIVER                                                   DISABLE
-#define MCU_TIMER0_DRIVER                                                DISABLE
+#define MCU_TIMER0_DRIVER                                                ENABLE
 #define MCU_TIMER1_DRIVER                                                DISABLE
 #define MCU_TIMER2_DRIVER                                                DISABLE
 
@@ -78,6 +78,8 @@ ADC_Config();
 
 #define USART_BAUD_REG_CALC(baud)        (uint16_t)((F_CPU / (16 * (baud))) - 1)
 #define USART_BAUD_REG_2X_CALC(baud)      (uint16_t)((F_CPU / (8 * (baud))) - 1)
+
+#define USART_PRINTF_REDIRECT
 
 void
 USART_Config();

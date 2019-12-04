@@ -19,6 +19,8 @@
           <itemPath>../../config/avr-atmega-driver-config/mcu-cfg.c</itemPath>
           <itemPath>../../config/avr-atmega-driver-config/mcu-cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="f2" displayName="New Folder 2" projectFiles="true">
+        </logicalFolder>
         <itemPath>../../library/avr-atmage-driver/source/adc.c</itemPath>
         <itemPath>../../library/avr-atmage-driver/source/adc.h</itemPath>
         <itemPath>../../library/avr-atmage-driver/source/delay.c</itemPath>
@@ -41,6 +43,10 @@
       <logicalFolder name="f2" displayName="embclib" projectFiles="true">
         <itemPath>../../library/embclib/source/utils/utils.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="printf" projectFiles="true">
+        <itemPath>../../library/printf/source/print.c</itemPath>
+        <itemPath>../../library/printf/source/print.h</itemPath>
+      </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -54,6 +60,7 @@
     <Elem>../../library/avr-atmage-driver/source</Elem>
     <Elem>../../config/avr-atmega-driver-config</Elem>
     <Elem>../../library/embclib/source</Elem>
+    <Elem>../../library/printf/source</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -166,7 +173,7 @@
       </AVR-GCC>
       <AVR-Global>
         <property key="common-include-directories"
-                  value="..\..\config;..\..\library\avr-atmage-driver\source;..\..\library\embclib\source;..\..\library\embclib\source\stdint;..\..\library\embclib\source\utils;..\..\config\avr-atmega-driver-config;..\..\config\embclib-config"/>
+                  value="..\..\config;..\..\library\avr-atmage-driver\source;..\..\library\embclib\source;..\..\library\embclib\source\stdint;..\..\library\embclib\source\utils;..\..\config\avr-atmega-driver-config;..\..\config\embclib-config;..\..\library\printf\source;..\..\library\printf\config"/>
         <property key="eep" value="false"/>
         <property key="external-ram-check" value="false"/>
         <property key="hex" value="true"/>

@@ -30,5 +30,12 @@
 int
 main(void)
 {
+  MCU_Init();
   
+  MCU_INTERRUPT_ENABLE();
+  
+  while(1)
+  {
+   
+  }
 }
