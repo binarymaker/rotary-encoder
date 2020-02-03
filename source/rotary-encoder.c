@@ -33,8 +33,8 @@ ROTARY_ENCODER_Init(rotaryEncoder_st* self, pin_et pin_a, pin_et pin_b)
   self->pin_a = pin_a;
   self->pin_b = pin_b;
   self->count = 0;
-  self->lastState = 0U;
-  self->state = 0U;
+  self->lastState = 3U;
+  self->state = 3U;
 }
 
 void
