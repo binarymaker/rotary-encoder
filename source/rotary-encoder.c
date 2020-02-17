@@ -33,6 +33,7 @@ ROTARY_ENCODER_Init(rotaryEncoder_st* self, pin_et pin_a, pin_et pin_b)
   self->pin_a = pin_a;
   self->pin_b = pin_b;
   self->count = 0;
+  self->pulse = 0;
   self->lastState = 3U;
   self->state = 3U;
 }
@@ -44,10 +45,18 @@ ROTARY_ENCODER_Update(rotaryEncoder_st* self){
     self->state = GPIO_PinRead(self->pin_a) | (GPIO_PinRead(self->pin_b) << 1);
     sum = (self->lastState << 2) | self->state;
     if(sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011){
-        self->count++;
+        self->pulse++;
     }
     if(sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000){
-        self->count--;
+        self->pulse--;
     }
+    self->count = self->pulse / 2; /*self->count = self->pulse / 2 */
     self->lastState = self->state;
+}
+
+void
+ROTARY_ENCODER_SetCount(rotaryEncoder_st* self, int32_t count)
+{
+  self->count = count;
+  self->pulse = (count * 2) - (self->pulse % 2);
 }

@@ -42,6 +42,8 @@ typedef struct
   volatile uint8_t state;
   volatile uint8_t lastState;
   volatile int32_t count;
+  volatile int32_t pulse;
+  
 }rotaryEncoder_st;
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
@@ -53,6 +55,8 @@ ROTARY_ENCODER_Init(rotaryEncoder_st* self, pin_et pin_a, pin_et pin_b);
 void
 ROTARY_ENCODER_Update(rotaryEncoder_st* self);
 
+void
+ROTARY_ENCODER_SetCount(rotaryEncoder_st* self, int32_t count);
 #ifdef __cplusplus
 }
 #endif
