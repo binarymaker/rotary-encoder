@@ -57,6 +57,14 @@ ROTARY_ENCODER_Update(rotaryEncoder_st* self);
 
 void
 ROTARY_ENCODER_SetCount(rotaryEncoder_st* self, int32_t count);
+
+int16_t
+ROTARY_ENCODER_ReadCount(rotaryEncoder_st* self);
+
+void
+ROTARY_ENCODER_LimitCount(rotaryEncoder_st* self, 
+                          int16_t min_i16, int16_t max_i16);
+
 #ifdef __cplusplus
 }
 #endif

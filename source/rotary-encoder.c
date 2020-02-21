@@ -60,3 +60,22 @@ ROTARY_ENCODER_SetCount(rotaryEncoder_st* self, int32_t count)
   self->count = count;
   self->pulse = (count * 2) - (self->pulse % 2);
 }
+
+int16_t
+ROTARY_ENCODER_ReadCount(rotaryEncoder_st* self)
+{
+  return self->count;
+}
+
+void
+ROTARY_ENCODER_LimitCount(rotaryEncoder_st* self, int16_t min_i16, int16_t max_i16)
+{
+  if (max_i16 < self->count)
+  {
+    ROTARY_ENCODER_SetCount(self, min_i16);
+  }
+  if (min_i16 > self->count)
+  {
+    ROTARY_ENCODER_SetCount(self, max_i16);
+  }
+}
